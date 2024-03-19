@@ -56,6 +56,7 @@ public class SecurityConfig {
                         //authorize.anyRequest().authenticated()
                         authorize.requestMatchers(HttpMethod.GET, "/api/**").permitAll()
                                 .requestMatchers("/api/auth/**").permitAll() //to whitelist all the users
+                                .requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
                                 .anyRequest().authenticated()
 
                 ).exceptionHandling( exception -> exception
